@@ -1,0 +1,260 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+section {
+    padding: 30px 50px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+
+    h2 {
+        font-size: 2.5rem;
+        color: $text-dark;           // Changé
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+    }
+
+    p {
+        font-size: 1.1rem;
+        color: $text-body;           // Changé
+        max-width: 600px;
+        margin: 16px auto 0;
+    }
+}
+
+.page-content {
+    padding: 60px 0;
+}
+
+.content-grid {
+  display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 48px;
+}
+
+.main-content {
+    p { color: $text-body; }        // Changé
+    h2 { color: $text-dark; }
+    
+    
+}
+
+.how-it-works {
+    background: $light;
+
+    .steps {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 32px;
+       
+    }
+
+    .step {
+        text-align: center;
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: $primary;
+            color: $black;            // Changé: noir
+            border-radius: 50%;
+            @include flex-center;
+            font-weight: 700;
+            margin: 0 auto 16px;
+        }
+
+        .step-icon {
+            font-size: 2.5rem;
+            color: $primary-dark;
+            margin-bottom: 16px;
+        }
+
+        h3 {
+            margin-bottom: 12px;
+            font-family: 'Poppins', sans-serif;
+            font-style: normal;
+            color: $text-dark;
+        }
+
+        p { color: $text-body; }     // Changé
+    }
+
+    .how-it-works-footer {
+        text-align: center;
+        font-style: italic;
+        color: $text-body;           // Changé
+        padding-top: 32px;
+        border-top: 1px solid #E0E0E0;
+    }
+}
+
+.cta {
+    @include gradient-bg($primary, $primary-dark);
+    color: $black;
+    text-align: center;
+
+    h2 {
+        font-size: 2.5rem;
+        margin-bottom: 16px;
+        color: $black;               // Noir sur orange
+    }
+
+    p {
+        font-size: 1.1rem;
+        max-width: 600px;
+        margin: 0 auto 32px;
+        color: $black;               // Noir sur orange
+        font-weight: 500;
+    }
+
+    .btn-primary {
+        background: $text-dark;      // Fond foncé
+        color: $white;               // Blanc
+
+        &:hover {
+           
+            color: $white;
+            transform: translateY(-3px);
+        }
+    }
+}
+        /* ========== SECTION CERTIFICATS ========== */
+        .certifications-section {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+
+        .section-tag {
+            display: inline-block;
+            background: gradient(135deg, #fef3e8 0%, #fff5eb 100%);
+            color: var(--black);
+            padding: 4px 20px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .section-header h2 {
+            font-family: "Lobster Two", sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            color: var(--text-dark);
+        }
+
+        .section-header p {
+            color: var(--text-body);
+        }
+
+        /* Grille des certificats style cartes modernes */
+        .certs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        .cert-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: var(--transition);
+            border: 1px solid rgba(243, 129, 58, 0.15);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-12px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--primary);
+        }
+
+        .cert-img-wrapper {
+            background: #f9f9f9;
+            padding: 32px 24px 16px 24px;
+            text-align: center;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .cert-img {
+            max-width: 100%;
+            height: auto;
+            max-height: 220px;
+            object-fit: contain;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .cert-card:hover .cert-img {
+            transform: scale(1.02);
+        }
+
+        .cert-content {
+            padding: 24px 24px 32px;
+            flex: 1;
+        }
+
+        .cert-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--primary-dark);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .cert-org {
+            display: inline-block;
+            background: rgba(243, 129, 58, 0.1);
+            padding: 4px 12px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: 16px;
+        }
+
+        .cert-desc {
+            color: var(--text-body);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .cert-meta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 0.85rem;
+            color: var(--gray);
+            border-top: 1px solid #eee;
+            padding-top: 16px;
+            margin-top: auto;
+        }
+
+        .cert-meta i {
+            color: var(--primary);
+            width: 24px;
+        }
+
+        .badge-new {
+            background: var(--secondary);
+            color: var(--black);
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 40px;
+            display: inline-block;
+            margin-left: 12px;
+            vertical-align: middle;
+        }

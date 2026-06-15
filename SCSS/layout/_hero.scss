@@ -1,0 +1,214 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.hero {
+    @include gradient-bg(#fff8f0, #ffe8d6);
+    margin-top: 80px;
+    padding: 60px 0;
+}
+
+// Nouvelle structure pour la bannière avec GIF en fond
+.page-hero {
+    padding: 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    margin-top: 80px; // Pour compenser le header fixed
+    
+    .hero-banner {
+        position: relative;
+        width: 100%;
+        min-height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+                    border-bottom: #eb8536 3px solid;
+
+        // GIF en fond
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('../img/ydrcrop.gif');
+            background-size: cover;
+            background-position: center 30%;
+            background-repeat: no-repeat;
+            opacity: 0.7;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        // Dégradé de superposition pour meilleure lisibilité du texte
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(214, 188, 43, 0.226) 0%, rgba(235, 133, 54, 0.247) 100%);
+            z-index: 1;
+            
+        }
+       
+            h1 {
+                font-size: 3.5rem;
+                font-family: "Lobster Two", sans-serif;
+                font-weight: 700;
+                margin: 0;
+                color: rgb(10, 10, 10);
+                text-shadow: 2px 2px 4px rgb(255, 255, 255);
+                line-height: 1.2;
+                
+                br {
+                    display: none;
+                }
+            }
+        }
+    padding: 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    margin-top: 80px; // Pour compenser le header fixed
+    }
+     .page-hero-subtitle {
+              padding: 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+     
+    .container-accueil-title {
+        position: relative;
+        z-index: 2;
+        padding: 60px 40px;
+        text-align: center;
+        color: rgb(255, 137, 2);
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        width: 100%;
+
+        h1 {
+            font-size: 3.5rem;
+            font-family: "Lobster Two", sans-serif;
+            font-weight: 700;
+            margin: 0;
+            color: rgb(10, 10, 10);
+            text-shadow: 2px 2px 4px rgb(255, 255, 255);
+            line-height: 1.2;
+            
+            br {
+                display: none;
+            }
+        }
+    }
+}
+
+// Version alternative pour la page d'accueil uniquement
+body.home {
+    .page-hero .hero-banner {
+        min-height: 450px;
+        
+        &::before {
+            opacity: 1;
+            background-position: center 40%;
+        }
+    }
+    
+    .container-accueil-title h1 {
+        font-size: 3.8rem;
+    }
+}
+
+.container-accueil {
+  
+    padding: 10px;
+    background: linear-gradient(135deg, #e4ca3883 0%, #eb853677 100%);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: $text-dark;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+ 
+}
+
+.page-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 32px;
+    
+    h1 {
+        font-size: 3rem;
+        color: $text-dark;
+        font-family: 'Lobster Two', cursive;
+        font-weight: 700;
+    }
+}
+
+.hero-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.hero-content {
+    flex: 1.2;
+    min-width: 0;
+}
+
+.hero-badge {
+    background: $secondary;
+    color: $black;
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: 24px;
+}
+
+.hero h1 {
+    font-family: "Lobster Two", sans-serif;
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    color: $text-dark;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: $text-body;
+    margin-bottom: 32px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+/* Skip link - accessibilité */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: $primary-dark;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    z-index: 9999;
+    font-weight: 600;
+    border-radius: 0 0 4px 0;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+

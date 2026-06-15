@@ -1,0 +1,281 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// ─── Desktop (≤ 992px) ────────────────────────────
+@include responsive(desktop) {
+    .hero h1 { font-size: 2.5rem; }
+    .content-grid, .contact-grid { grid-template-columns: 1fr; }
+    .hero-wrapper { flex-direction: column; text-align: center; gap: 40px; }
+    .hero-content { text-align: center; }
+    .hero-buttons { justify-content: center; }
+    .hero-video { max-width: 450px; margin: 0 auto; }
+}
+
+// ─── Tablette (≤ 768px) ────────────────────────────
+@include responsive(tablet) {
+    // Menu hamburger
+    .hamburger { display: flex !important; }
+    .nav-menu {
+        position: fixed; left: -100%; top: 80px;
+        flex-direction: column; background: $white; width: 100%;
+        text-align: center; transition: 0.3s; box-shadow: $shadow;
+        padding: 32px 0; gap: 24px;
+        &.active { left: 0; }
+    }
+.hero-content { min-width: 0; }
+    // Titres
+    .hero h1, .page-hero h1 { font-size: 2rem !important; }
+    .page-hero { padding: 120px 0 0px !important; }
+    .section-header h2 { font-size: 1.8rem; }
+
+    // Grilles & espacements
+    .be .steps { gap: 24px; }
+    .videos-grid { gap: 0px; }
+    .video-container {
+        max-width: 100% !important;
+        min-width: 60% !important;
+        margin-bottom: 20px;
+    }
+
+    // Footer
+    .footer-grid { grid-template-columns: 1fr; text-align: center; }
+    .contact-info li { justify-content: center; }
+
+    // Mentions légales
+    .legal-card { padding: 24px; }
+    .contact-grid { gap: 32px; }
+    .contact-photo .about-image { max-width: 220px; }
+    .social-links a { width: 100%; justify-content: center; }
+}
+
+// ─── Mobile (≤ 480px) ──────────────────────────────
+@include responsive(mobile) {
+
+    .video-container {
+        max-width: 100% !important;
+        min-width: 0 !important;
+        width: 100%;
+        flex-basis: 100%;
+        margin-bottom: 20px;
+    }
+
+.benefits{
+    padding: 0;
+}
+    //  Surcharge des styles d'iframe Instagram
+    .instagram-cropped .instagram-media,
+    .instagram-cropped iframe,
+    .instagram-cropped blockquote {
+        width: 100% !important;
+        min-width: 300px !important;
+        max-width: 450px !important;
+        margin-left: 8px !important;
+        margin-right: 0 !important;
+        
+    }
+
+    .hero, .page-hero {
+        padding: 100px 10px 40px;
+        overflow-x: hidden;
+    }
+
+    .hero-badge {
+        font-size: 0.75rem;
+        padding: 4px 12px;
+    }
+
+    .hero h1 {
+        font-size: 1.6rem !important;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .hero-buttons .btn {
+        white-space: normal;
+        padding: 10px 16px;
+        font-size: 0.9rem;
+    }
+ body {
+        overflow-x: hidden;
+    }
+
+    .hero-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .hero-content {
+        min-width: 0;
+    }
+
+    .hero h1, .page-hero h1 {
+        font-size: 1.6rem !important;
+        line-height: 1.2;
+    }
+
+    .hero-badge {
+        font-size: 0.7rem;
+        padding: 4px 10px;
+    }
+
+  
+
+    .content-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 0;
+    }
+
+    .benefits-grid,
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .benefit-card,
+    .session-card,
+    .enterprise-card {
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .cta .btn-primary {
+        white-space: normal;
+        font-size: 0.9rem;
+        padding: 12px 18px;
+    }
+
+    .hero-buttons { flex-direction: column; align-items: center; }
+    .btn { justify-content: center; width: 100%; max-width: 320px; }
+    .video-crop-wrapper { max-height: 800px;}
+    .instagram-cropped { transform: translatey(50px); margin: -100px -10px ; }
+    .instagram-cropped .instagram-media,
+    .instagram-cropped iframe,
+    .instagram-cropped blockquote {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+    }
+    .videos-grid { gap: 20px; }
+
+    .benefit-card, .session-card, .enterprise-card { padding: 1.5rem 1.2rem; }
+    .steps { gap: 20px; }
+    .info-box {
+        flex-direction: column;
+        gap: 12px;
+    }
+    .sidebar .sidebar-card,
+    .contact-form-container,
+    .contact-info-container,
+    .legal-card {
+        padding: 20px 16px;
+    }
+    .footer { padding: 40px 0 20px; }
+    .footer-grid { gap: 30px; }
+    .contact-grid { gap: 24px; }
+}
+// ==================== RESPONSIVE ====================
+
+@include responsive(desktop) {
+    .page-hero .hero-banner {
+        min-height: 350px;
+        
+        .container-accueil-title h1 {
+            font-size: 2.8rem;
+        }
+    }
+    
+    body.home .page-hero .hero-banner {
+        min-height: 380px;
+        
+        .container-accueil-title h1 {
+            font-size: 3rem;
+        }
+    }
+}
+
+@include responsive(tablet) {
+    .page-hero {
+        margin-top: -27px;
+        
+        .hero-banner {
+            min-height: 300px;
+            
+            .container-accueil-title {
+                padding: 40px 20px;
+                
+                h1 {
+                    font-size: 2.2rem;
+                    
+                    br {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+    
+    body.home .page-hero .hero-banner {
+        min-height: 320px;
+        
+        .container-accueil-title h1 {
+            font-size: 2.4rem;
+        }
+    }
+}
+
+@include responsive(mobile) {
+    .page-hero {
+        margin-top: -27px;
+        
+        .hero-banner {
+            min-height: 250px;
+            
+            .container-accueil-title {
+                padding: 30px 15px;
+                
+                h1 {
+                    font-size: 1.6rem;
+                }
+            }
+        }
+    }
+    
+    body.home .page-hero .hero-banner {
+        min-height: 100px;
+        
+        .container-accueil-title h1 {
+            font-size: 1.8rem;
+        }
+    }
+}
+  @media (max-width: 768px) {
+            .facebook-video-wrapper {
+                max-width: 100%;
+            }
+        }
+
+     
+
+        @media (max-width: 768px) {
+            .benefits-grid-wrapper {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            
+            .benefit-item {
+                padding: 20px;
+            }
+            
+            .benefit-item h3 {
+                font-size: 1.3rem;
+            }
+        }
+// ─── Animation hamburger ───────────────────────────
+.hamburger span { transition: all 0.3s ease; }
+.hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }

@@ -1,0 +1,187 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+// _video.scss - version unifiée
+.video-card {
+    background: $white;
+    border-radius: 24px;
+    overflow: hidden;
+    width: 100%;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.582);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    animation: videoReveal 1.5s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards;
+    animation-delay: 0.5s;
+
+    @keyframes videoReveal {
+        0% { opacity: 0; transform: translateY(30px) scale(0.96); }
+        100% { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    &:hover {
+        box-shadow: 0 30px 50px rgba(0, 0, 0, 0.459);
+    }
+}
+
+.video-crop-wrapper {
+    max-height: 800px;
+    border: none;
+    overflow: hidden;
+    background: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+   //max-width:   400px;
+    //min-width: 326px !important;
+}
+
+.instagram-cropped {
+    transform: translateY(40px);
+     margin: -100px -10px;
+    max-height: 550px;
+    animation: contentFadeIn 3s ease-out forwards;
+//width: 310px !important;
+    @keyframes contentFadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+ .instagram-cropped .instagram-media,
+.instagram-cropped iframe,
+.instagram-cropped blockquote {
+    margin: 0 auto !important;
+    width: 100% !important;
+    min-width: 326px !important;
+    max-width: 540px !important;
+}
+}
+
+.video-credit-link {
+    text-align: center;
+    padding: 12px 16px;
+    background: $white;
+    border-top: 1px solid rgba(243, 129, 58, 0.2);
+
+    a {
+        font-size: 0.85rem;
+        color: #5a6a7a;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        transition: color 0.3s ease;
+        font-weight: 400;
+
+        &:hover { color: $primary; }
+        
+        p {
+            color: $black;                   // Changé: noir
+            margin: 0;
+        }
+    }
+}
+
+.videos-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;               // Augmenté (était 30px)
+}
+
+.video-container {
+    max-width: 270px;        // Était 200px → plus large
+    flex: 1 1 280px;         // Remplace flex: 1; min-width: 200px;
+    min-width: 200px;
+    background: transparent;
+    border-radius: 28px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 2px solid $primary;
+
+    &:hover {
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.507);
+    }
+}
+
+/* Styles pour la section avec vidéos de chaque côté du contenu */
+        .videos-side-wrapper {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .video-side {
+            flex: 1;
+            min-width: 280px;
+            max-width: 350px;
+        }
+
+        .center-content {
+            flex: 2;
+            min-width: 280px;
+        }
+
+        .video-side .sidebar-card {
+            margin-bottom: 0;
+            height: 100%;
+        }
+
+        @media (max-width: 992px) {
+            .videos-side-wrapper {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .video-side {
+                max-width: 100%;
+                width: 100%;
+            }
+
+            .video-side:first-child {
+                order: 1;
+            }
+
+            .center-content {
+                order: 2;
+            }
+
+            .video-side:last-child {
+                order: 3;
+            }
+        }
+.hero-video {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+    /* Style pour la vidéo Facebook responsive */
+        .video-facebook {
+            padding: 40px 0;
+            background: #f8f9fa;
+        }
+        
+        .video-facebook .container {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .facebook-video-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 560px;
+            margin: 0 auto;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .facebook-video-wrapper iframe {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 560 / 420;
+            display: block;
+        }

@@ -1,0 +1,52 @@
+   /* Style pour la grille des bienfaits en 2 colonnes */
+        .benefits-grid-wrapper {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin: 40px 0;
+        }
+
+        .benefit-item {
+            background: #fff;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(243, 129, 58, 0.15);
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+            border-color: #f3813a;
+        }
+
+        .benefit-item h3 {
+            font-size: 1.5rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: #1a1918;
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #f3813a;
+            display: inline-block;
+        }
+
+        .benefit-item p {
+            color: #020202;
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+      
+          .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }

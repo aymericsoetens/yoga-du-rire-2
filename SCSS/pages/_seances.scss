@@ -1,0 +1,29 @@
+@use '../abstracts/variables' as *;
+.session-image {
+    width: 80%;
+    height: auto;
+    border-radius: $radius-sm;
+    margin-top: 20px;
+    border: 5px solid $primary;
+}
+.text-center {
+    text-align: center;
+}
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+.agenda-card-title {
+    font-size: 1.8rem;
+    color: $primary-dark;
+    margin-bottom: 16px;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    text-align: center;
+}

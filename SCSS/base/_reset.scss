@@ -1,0 +1,30 @@
+@use '../abstracts/variables' as *;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: $black;
+    background-color: $white;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.quote {
+    text-align: center;
+  
+    padding: 20px;
+    font-size: 1rem;
+    color: $text-dark;
+    background-color: $primary-opa;
+   
+    border-left: 4px solid $primary;
+}
